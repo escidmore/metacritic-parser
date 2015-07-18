@@ -1,0 +1,66 @@
+Metacritic Parser
+
+  What is it?
+  -----------
+
+	Metacritic Parser is a Python 3 application that exposes methods for 
+	retrieving scores for any or all of the top ten Playstation 3 and 4 games.
+
+  The Latest Version
+  ------------------
+
+	The latest version of this software can be found on github at:
+	
+	https://github.com/escidmore/metacritic-parser
+
+  Installation
+  ------------
+
+	This application requires Python 3, Flask, and BeautifulSoup 4.  The two
+	required modules can generally be installed with:
+		
+		pip install flask
+		pip install beautifulsoup4
+		
+  Documentation
+  -------------
+
+	When run, this application will listen on the IP address and port defined
+	near the top of the application source code in the address and port
+	variables.  Default values are an address of 127.0.0.1 and port 5000.
+	
+	The application will respond to HTTP "GET" requests to the following paths,
+	returning the specified data:
+	
+	Path: /games
+	Data: JSON output of the top metacritic scores of playstation 3 games,
+	along with their titles.
+	
+	Path: /games/<GAME>
+	Data: JSON output of the title and score of <GAME> for playstation 3
+	
+	Path: /PS4games
+	Data: JSON output of the top metacritic scores of playstation 4 games,
+	along with their titles.
+	
+	Path: /PS4games/<GAME>
+	Data: JSON output of the title and score of <GAME> for playstation 4
+	
+	NOTES: The page being parsed only shows scores from the last 90 days,
+	and the top ten games for that period.  Scores for individual games that
+	are not in the top 10, or scored more than 90 days ago, cannot be retrieved.
+	
+	If there are less than 10 titles with scores within the last 90 days, the
+	bulk output may return fewer than 10 results.
+		
+  Licensing
+  ---------
+
+  Please see the file called LICENSE.
+
+  Contacts
+  --------
+
+     o For all questions and concerns please contact:
+       Evelyn Scidmore (escidmore@gmail.com)
+      
